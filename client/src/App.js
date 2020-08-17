@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
+import LightToggle from "./components/LightToggle";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function App() {
     <div>
       <Router>
         <nav className="container">
+        <LightToggle />
           <h1>
             React Plants <span role="img">🌿</span>
           </h1>

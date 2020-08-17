@@ -20,10 +20,10 @@ test("form shows success message on submit with form details", async () => {
     fireEvent.change(lastName, { target: {value: "Customer"} });
 
     const address = getByTestId("address");
-    fireEvent.change(address, { target: {value: "1920 Victory Pl."} });
+    fireEvent.change(address, { target: {value: "333 Pine Rd."} });
 
     const city = getByTestId("city");
-    fireEvent.change(city, { target: {value: "Warsaw"} });
+    fireEvent.change(city, { target: {value: "Sometown"} });
 
     const state = getByTestId("state");
     fireEvent.change(state, { target: {value: "NE"} });
