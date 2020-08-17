@@ -30,13 +30,35 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+To build stateful class components cone must declare and extend the Component class (class <componentName> extends React.Component), add a constructor function that inculde the super() function (granting access to the "this" keyword), and then set up state on the component with the declaration of a variable in the form of: this.state=<x>;. From here the state can be used elserwhere in the component (e.g. in stateful logic functions and rendered JSX). 
+
 2. Describe the different phases of the component lifecycle.
+
+The component lifecylce has three main phases: first, mounting (birth), in which inital data is distributed and the component itself is rendered; second, updating (growth), in which re-rendering takes place in accordance with changes in data (state); and third, un-mounting (death), in which de-rendering occures and any of the component's unwanted, lingering effects are, ideally, eliminated. 
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+Some of the most common component lifecycle methods are: (1) constructor, which introduces state (data) in the mounting (birth) phase; (2) render, which (not surprisingly) renders JSX to the DOM in the mounting (birth) and updating (growth) phases; (3) componentDidMount, which, also in the mounting phase, facilitates asynchronous changes (e.g. to state) and re-renders; (4) componentDidUpdate, which, in the update (growth) phase, allows for changes after re-renders; and (5) componentWillUnmount, which is used to get rid of unwanted, lingering effects of soon-to-be eliminated components, during the un-mounting phase. 
+
 4. Define stateful logic.
 
+Stateful logic, broadly defined, is any logic (i.e. functions) that allocates and or modifies state data in a conponent. Such logic can be controlled locally (from within the  component itself), or via imported custom hooks which are often written in an abstracted form, only to have their nomenclature modified to fit the component in which they are used (making them both reusable and useful for composing concise, DRY code).
+
 5. Describe how to test a React component with React Testing Library.
+
+After the necessary testing methods have been imported into a component, the testing process consists of three main steps (which are sometimes combined in practice).
+
+(1) Arrange: The code to be tested is arranged such that it can be tested. Below, a form is "arranged," via the render method, so that it can be tested. 
+
+  const { getByText } = render(<Form />);
+
+(2) Act: The test is performed, eliciting a result.
+
+  const formTitle = getByText(/register here/i);
+
+(3) Assert: In this step, it is asserted that a certain result is expected, and this assertion is compared against the actual result elicited by the test.
+
+  expect(formTitle)toBeInTheDocument();
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
